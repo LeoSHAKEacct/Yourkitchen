@@ -6,7 +6,7 @@
 <title>Mesa — Restaurant Operations Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -495,6 +495,7 @@ footer {
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#how">How it works</a>
+    <a href="#app">The app</a>
     <a href="#pricing">Pricing</a>
   </div>
   <a href="#pricing" class="nav-cta">Get started</a>
@@ -697,6 +698,167 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- APP MOCKUPS -->
+<style>
+.mesa-apps{--m-green:var(--terra,#2A7A4F);--m-green-dk:var(--green,#1A5C3A);--m-green-bg:var(--terra-bg,#E8F5EE);--m-amber:var(--amber,#B8860B);--m-amber-bg:var(--amber-bg,#F5EFD8);--m-blue:#3A6E8F;--m-paper:var(--bg,#F8F6F1);--m-card:#fff;--m-ink:var(--ink,#1C1C1A);--m-muted:var(--ink3,#8A8680);--m-line:var(--border,#D8D3C8);--m-mono:'Space Mono',ui-monospace,monospace;background:var(--bg,#F8F6F1);padding:96px 20px;}
+.mesa-apps *{box-sizing:border-box;margin:0;}
+.mesa-apps .head{max-width:640px;margin:0 auto 56px;text-align:center;}
+.mesa-apps .eyebrow{font-family:var(--m-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--m-green);font-weight:700;}
+.mesa-apps h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,5vw,44px);line-height:1.05;margin:14px 0 0;color:var(--m-ink);}
+.mesa-apps h2 em{font-style:italic;color:var(--m-green);}
+.mesa-apps .sub{margin-top:16px;color:var(--m-muted);font-size:17px;line-height:1.55;font-family:'Inter',sans-serif;}
+.mesa-apps .stage{display:flex;flex-wrap:wrap;gap:52px;justify-content:center;align-items:flex-start;}
+.mesa-apps .device{display:flex;flex-direction:column;align-items:center;gap:18px;}
+.mesa-apps .cap{text-align:center;}.mesa-apps .cap b{font-family:'Fraunces',serif;font-weight:500;font-size:18px;color:var(--m-green);display:block;}
+.mesa-apps .cap .mgr{color:var(--m-ink);}.mesa-apps .cap span{font-size:13px;color:var(--m-muted);font-family:'Inter',sans-serif;}
+.mesa-apps .phone{position:relative;width:300px;height:620px;background:#0E120F;border-radius:46px;padding:11px;box-shadow:0 28px 60px -20px rgba(20,30,22,.45),inset 0 0 0 2px #2A302B;}
+.mesa-apps .phone .notch{position:absolute;top:20px;left:50%;transform:translateX(-50%);width:96px;height:24px;background:#0E120F;border-radius:14px;z-index:5;}
+.mesa-apps .scr-wrap{position:relative;height:100%;width:100%;background:var(--m-paper);border-radius:36px;overflow:hidden;display:flex;flex-direction:column;font-family:'Inter',sans-serif;}
+.mesa-apps .phone.mgr .scr-wrap{background:#11140F;}
+.mesa-apps .sbar{display:flex;justify-content:space-between;align-items:center;padding:14px 26px 6px;font-size:13px;font-weight:600;flex-shrink:0;color:var(--m-ink);}
+.mesa-apps .phone.mgr .sbar{color:#EDEAE2;}
+.mesa-apps .batt{width:22px;height:11px;border:1.5px solid currentColor;border-radius:3px;opacity:.8;}
+.mesa-apps .clockin{flex-shrink:0;display:flex;align-items:center;gap:7px;margin:2px 16px 0;padding:8px 12px;border-radius:11px;background:var(--m-green-bg);color:var(--m-green-dk);font-size:11.5px;font-weight:600;}
+.mesa-apps .cdot{width:7px;height:7px;border-radius:50%;background:var(--m-green);box-shadow:0 0 0 3px rgba(42,122,79,.2);}
+.mesa-apps .scr{display:none;flex:1;overflow-y:auto;padding:14px 16px 78px;scrollbar-width:none;}
+.mesa-apps .scr::-webkit-scrollbar{display:none;}
+.mesa-apps .scr.on{display:block;}
+.mesa-apps .stop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;gap:8px;}
+.mesa-apps .kick{font-family:var(--m-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--m-muted);}
+.mesa-apps .phone.mgr .kick{color:#8C968B;}
+.mesa-apps .stitle{font-family:'Fraunces',serif;font-weight:500;font-size:23px;margin-top:2px;color:var(--m-ink);}
+.mesa-apps .phone.mgr .stitle{color:#F3F1EA;}
+.mesa-apps .chip{font-size:11px;font-weight:600;padding:6px 10px;border-radius:20px;white-space:nowrap;background:var(--m-green);color:#fff;}
+.mesa-apps .tk{background:var(--m-card);border:1px solid var(--m-line);border-radius:14px;padding:13px 14px;margin-bottom:11px;}
+.mesa-apps .tk.rdy{border-color:var(--m-green);box-shadow:0 0 0 1px var(--m-green) inset;}
+.mesa-apps .tk.cook{border-left:3px solid var(--m-amber);}
+.mesa-apps .tk.new{border-left:3px solid var(--m-muted);}
+.mesa-apps .tkhd{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;}
+.mesa-apps .tkhd b{font-family:'Fraunces',serif;font-weight:500;font-size:15px;}
+.mesa-apps .bdg{font-family:var(--m-mono);font-size:10px;font-weight:700;padding:4px 8px;border-radius:6px;}
+.mesa-apps .bdg.rdy{background:var(--m-green-bg);color:var(--m-green-dk);}
+.mesa-apps .bdg.cook{background:var(--m-amber-bg);color:var(--m-amber);}
+.mesa-apps .bdg.new{background:#EEEBE3;color:var(--m-muted);}
+.mesa-apps .tkl{list-style:none;font-family:var(--m-mono);font-size:12.5px;}
+.mesa-apps .tkl li{display:flex;align-items:center;gap:7px;padding:3px 0;color:var(--m-ink);}
+.mesa-apps .tkl li i{margin-left:auto;font-style:normal;}.mesa-apps .tkl li s{color:var(--m-muted);min-width:22px;text-decoration:none;}
+.mesa-apps .dn{color:var(--m-green);font-weight:700;}.mesa-apps .pn{color:#C4BFB4;}
+.mesa-apps .tkcta{margin-top:11px;width:100%;border:0;cursor:pointer;background:var(--m-green);color:#fff;font-weight:600;font-size:13px;padding:11px;border-radius:10px;}
+.mesa-apps .menu{background:var(--m-card);border:1px solid var(--m-line);border-radius:14px;overflow:hidden;}
+.mesa-apps .mrow{width:100%;display:flex;justify-content:space-between;align-items:center;padding:13px 14px;border:0;border-bottom:1px solid var(--m-line);background:none;font-size:14px;color:var(--m-ink);cursor:pointer;}
+.mesa-apps .mrow:last-child{border-bottom:0;}
+.mesa-apps .madd{width:24px;height:24px;border-radius:7px;background:var(--m-green-bg);color:var(--m-green-dk);font-weight:700;display:grid;place-items:center;}
+.mesa-apps .cart{margin-top:14px;background:#161B17;border-radius:14px;padding:14px;color:#EDEAE2;}
+.mesa-apps .cart p{font-family:var(--m-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9AA59B;margin-bottom:8px;}
+.mesa-apps .cline{font-family:var(--m-mono);font-size:12.5px;padding:4px 0;border-bottom:1px dashed #333B34;}
+.mesa-apps .csend{margin-top:12px;width:100%;border:0;cursor:pointer;background:var(--m-green);color:#fff;font-weight:600;font-size:13px;padding:11px;border-radius:10px;}
+.mesa-apps .mecard{background:var(--m-card);border:1px solid var(--m-line);border-radius:14px;padding:6px 14px;}
+.mesa-apps .merow{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--m-line);font-size:14px;}
+.mesa-apps .merow:last-child{border-bottom:0;}.mesa-apps .merow b{font-family:var(--m-mono);}
+.mesa-apps .merow.big b{font-size:20px;color:var(--m-green);}
+.mesa-apps .pos{color:var(--m-green);}.mesa-apps .neg{color:#C7472F;}
+.mesa-apps .clockbtn{margin-top:14px;width:100%;border:1px solid var(--m-line);background:var(--m-card);color:#C7472F;font-weight:600;font-size:14px;padding:13px;border-radius:11px;cursor:pointer;}
+.mesa-apps .legend{display:flex;align-items:center;gap:4px;font-size:10px;color:#9AA59B;flex-wrap:wrap;justify-content:flex-end;max-width:120px;}
+.mesa-apps .lg{width:8px;height:8px;border-radius:3px;margin-left:4px;}
+.mesa-apps .floor{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.mesa-apps .tbl{border-radius:12px;padding:12px 8px;min-height:64px;display:flex;flex-direction:column;justify-content:center;gap:3px;}
+.mesa-apps .tbl b{font-family:'Fraunces',serif;font-size:15px;}.mesa-apps .tbl span{font-size:10px;line-height:1.2;}
+.mesa-apps .tbl.free{background:rgba(42,122,79,.16);border:1px solid rgba(42,122,79,.4);color:#BFE6CE;}.mesa-apps .tbl.free b{color:#DFF4E7;}
+.mesa-apps .tbl.occ{background:rgba(184,134,11,.16);border:1px solid rgba(184,134,11,.4);color:#E8D7A8;}.mesa-apps .tbl.occ b{color:#F5EBCF;}
+.mesa-apps .tbl.res{background:rgba(58,110,143,.18);border:1px solid rgba(58,110,143,.45);color:#BFD6E6;}.mesa-apps .tbl.res b{color:#DCEAF4;}
+.mesa-apps .tbl.cln{background:rgba(255,255,255,.06);border:1px dashed #3A423B;color:#8C968B;}.mesa-apps .tbl.cln b{color:#B6C0B6;}
+.mesa-apps .kpi{background:#161B14;border:1px solid #2A312A;border-radius:14px;padding:16px;margin-bottom:14px;}
+.mesa-apps .kpi .big{font-family:'Fraunces',serif;font-weight:500;font-size:34px;color:#F3F1EA;display:flex;align-items:baseline;gap:10px;}
+.mesa-apps .kpi .dl{font-family:var(--m-mono);font-size:13px;color:#5FCB8E;font-weight:700;}
+.mesa-apps .kpi p{font-size:12px;color:#8C968B;margin-top:4px;}
+.mesa-apps .bars{background:#161B14;border:1px solid #2A312A;border-radius:14px;padding:14px;margin-bottom:14px;display:flex;flex-direction:column;gap:8px;}
+.mesa-apps .brow{display:flex;align-items:center;gap:10px;}.mesa-apps .brow span{font-family:var(--m-mono);font-size:10px;color:#8C968B;width:26px;}
+.mesa-apps .brow i{height:9px;border-radius:5px;background:linear-gradient(90deg,#2A7A4F,#4CA876);width:var(--w);}
+.mesa-apps .blbl{font-family:var(--m-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8C968B;margin-bottom:8px;}
+.mesa-apps .best{list-style:none;counter-reset:b;display:flex;flex-direction:column;gap:7px;}
+.mesa-apps .best li{counter-increment:b;display:flex;align-items:center;gap:10px;font-size:13px;color:#E7E4DC;}
+.mesa-apps .best li::before{content:counter(b);font-family:var(--m-mono);font-size:11px;width:20px;height:20px;border-radius:6px;background:#222922;color:#9AA59B;display:grid;place-items:center;}
+.mesa-apps .best li b{margin-left:auto;font-family:var(--m-mono);color:#5FCB8E;}
+.mesa-apps .pay{background:#161B14;border:1px solid #2A312A;border-radius:14px;padding:6px 16px;}
+.mesa-apps .pay .nm{font-family:'Fraunces',serif;font-weight:500;font-size:16px;color:#F3F1EA;padding:14px 0 12px;border-bottom:1px solid #2A312A;}
+.mesa-apps .pay .nm span{font-family:'Inter';font-size:11px;color:#8C968B;margin-left:6px;}
+.mesa-apps .prow{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #222922;font-size:13.5px;color:#D7D3CA;}.mesa-apps .prow b{font-family:var(--m-mono);color:#E7E4DC;}
+.mesa-apps .pnet{display:flex;justify-content:space-between;align-items:center;padding:15px 0 14px;font-size:15px;color:#F3F1EA;}.mesa-apps .pnet b{font-family:'Fraunces',serif;font-size:24px;color:#5FCB8E;}
+.mesa-apps .pexp{margin-top:14px;width:100%;border:0;cursor:pointer;background:#EDEAE2;color:#16201A;font-weight:600;font-size:13px;padding:13px;border-radius:11px;}
+.mesa-apps .tabbar{position:absolute;left:11px;right:11px;bottom:11px;height:62px;display:flex;border-radius:0 0 36px 36px;background:rgba(248,246,241,.92);backdrop-filter:blur(10px);border-top:1px solid var(--m-line);}
+.mesa-apps .phone.mgr .tabbar{background:rgba(17,20,15,.92);border-top:1px solid #2A312A;}
+.mesa-apps .tab{flex:1;border:0;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10px;font-weight:600;color:var(--m-muted);}
+.mesa-apps .tab i{font-style:normal;font-size:17px;}.mesa-apps .tab.on{color:var(--m-green);}
+.mesa-apps .phone.mgr .tab{color:#7E887E;}.mesa-apps .phone.mgr .tab.on{color:#5FCB8E;}
+@media(max-width:680px){.mesa-apps .stage{gap:40px;}.mesa-apps .phone{width:280px;height:580px;}}
+</style>
+
+<section class="mesa-apps" id="app">
+  <div class="head">
+    <span class="eyebrow">The app</span>
+    <h2>What your team <em>actually sees.</em></h2>
+    <p class="sub">The same system, two views. Floor staff get one task at a time. The manager gets the whole restaurant.</p>
+  </div>
+  <div class="stage">
+    <div class="device">
+      <div class="cap"><b>Employee app</b><span>Waiters &amp; kitchen · one task at a time</span></div>
+      <div class="phone" data-phone="emp">
+        <div class="notch"></div>
+        <div class="scr-wrap">
+          <div class="sbar"><span>8:14</span><span class="batt"></span></div>
+          <div class="clockin"><span class="cdot"></span>Clocked in · GPS verified · since 5:02 PM</div>
+          <div class="scr on" data-scr="emp-tables">
+            <div class="stop"><div><p class="kick">Tonight</p><p class="stitle">My tables</p></div><span class="chip">Tips today $43</span></div>
+            <div class="tk rdy"><div class="tkhd"><b>Table 2</b><span class="bdg rdy">Ready</span></div><ul class="tkl"><li><s>3×</s>Pasta al pesto<i class="dn">✓</i></li><li><s>1×</s>Caesar salad<i class="dn">✓</i></li></ul><button class="tkcta">Pick up &amp; notify table</button></div>
+            <div class="tk cook"><div class="tkhd"><b>Table 7</b><span class="bdg cook">Cooking · 8m</span></div><ul class="tkl"><li><s>2×</s>Ceviche<i class="dn">✓</i></li><li><s>1×</s>Filet mignon<i class="pn">○</i></li></ul></div>
+            <div class="tk new"><div class="tkhd"><b>Table 4</b><span class="bdg new">Sent · 2m</span></div><ul class="tkl"><li><s>2×</s>Grilled sea bass<i class="pn">○</i></li><li><s>1×</s>Arroz con pollo<i class="pn">○</i></li><li><s>1×</s>Vegetarian bowl<i class="pn">○</i></li></ul></div>
+          </div>
+          <div class="scr" data-scr="emp-order">
+            <div class="stop"><div><p class="kick">Table 4 · Carlos</p><p class="stitle">New order</p></div></div>
+            <div class="menu"><button class="mrow"><span>Grilled sea bass</span><span class="madd">＋</span></button><button class="mrow"><span>Ceviche</span><span class="madd">＋</span></button><button class="mrow"><span>Arroz con pollo</span><span class="madd">＋</span></button><button class="mrow"><span>Vegetarian bowl</span><span class="madd">＋</span></button></div>
+            <div class="cart"><p>Order ticket</p><div class="cline">2× Grilled sea bass</div><div class="cline">1× Arroz con pollo</div><div class="cline">1× Vegetarian bowl</div><button class="csend">Send to kitchen →</button></div>
+          </div>
+          <div class="scr" data-scr="emp-me">
+            <div class="stop"><div><p class="kick">This week</p><p class="stitle">Carlos Jiménez</p></div></div>
+            <div class="mecard"><div class="merow"><span>Hours worked</span><b>39.5 h</b></div><div class="merow"><span>Overtime ×1.5</span><b>1.5 h</b></div><div class="merow"><span>Tips this week</span><b class="pos">+$43</b></div><div class="merow big"><span>Net so far</span><b>$356</b></div></div>
+            <button class="clockbtn">Clock out</button>
+          </div>
+          <nav class="tabbar"><button class="tab on" data-go="emp-tables"><i>▦</i>Tables</button><button class="tab" data-go="emp-order"><i>＋</i>Order</button><button class="tab" data-go="emp-me"><i>◷</i>Me</button></nav>
+        </div>
+      </div>
+    </div>
+    <div class="device">
+      <div class="cap"><b class="mgr">Manager app</b><span>Floor, revenue &amp; payroll · the whole room</span></div>
+      <div class="phone mgr" data-phone="mgr">
+        <div class="notch"></div>
+        <div class="scr-wrap">
+          <div class="sbar"><span>8:14</span><span class="batt"></span></div>
+          <div class="scr on" data-scr="mgr-floor">
+            <div class="stop"><div><p class="kick">Live · 312 covers tonight</p><p class="stitle">Floor</p></div><span class="legend"><i class="lg" style="background:#2A7A4F"></i>Free<i class="lg" style="background:#B8860B"></i>Busy<i class="lg" style="background:#3A6E8F"></i>Held</span></div>
+            <div class="floor"><div class="tbl free"><b>01</b><span>4 seats</span></div><div class="tbl occ"><b>02</b><span>Carlos · 42m</span></div><div class="tbl occ"><b>03</b><span>Daniela · 18m</span></div><div class="tbl res"><b>04</b><span>8:30 PM</span></div><div class="tbl occ"><b>05</b><span>Carlos · 61m</span></div><div class="tbl free"><b>06</b><span>2 seats</span></div><div class="tbl cln"><b>07</b><span>Cleaning</span></div><div class="tbl occ"><b>08</b><span>Daniela · 9m</span></div><div class="tbl free"><b>09</b><span>6 seats</span></div></div>
+          </div>
+          <div class="scr" data-scr="mgr-rev">
+            <div class="stop"><div><p class="kick">This week</p><p class="stitle">Revenue</p></div></div>
+            <div class="kpi"><div class="big">$4,820<span class="dl">▲ 12%</span></div><p>vs $4,303 last week</p></div>
+            <div class="bars"><div class="brow"><span>Mon</span><i style="--w:42%"></i></div><div class="brow"><span>Tue</span><i style="--w:55%"></i></div><div class="brow"><span>Wed</span><i style="--w:48%"></i></div><div class="brow"><span>Thu</span><i style="--w:63%"></i></div><div class="brow"><span>Fri</span><i style="--w:92%"></i></div><div class="brow"><span>Sat</span><i style="--w:100%"></i></div><div class="brow"><span>Sun</span><i style="--w:38%"></i></div></div>
+            <p class="blbl">Best sellers</p><ol class="best"><li><span>Grilled sea bass</span><b>87</b></li><li><span>Ceviche</span><b>74</b></li><li><span>Arroz con pollo</span><b>61</b></li></ol>
+          </div>
+          <div class="scr" data-scr="mgr-pay">
+            <div class="stop"><div><p class="kick">Week of June 23</p><p class="stitle">Payroll</p></div></div>
+            <div class="pay"><p class="nm">Carlos Jiménez<span>Waiter</span></p><div class="prow"><span>Base salary</span><b>$296</b></div><div class="prow"><span>Overtime (×1.5)</span><b class="pos">+$17</b></div><div class="prow"><span>Tips</span><b class="pos">+$43</b></div><div class="prow"><span>Social security</span><b class="neg">−10.5%</b></div><div class="pnet"><span>Net to pay</span><b>$356</b></div></div>
+            <button class="pexp">Export for accountant</button>
+          </div>
+          <nav class="tabbar"><button class="tab on" data-go="mgr-floor"><i>▦</i>Floor</button><button class="tab" data-go="mgr-rev"><i>◴</i>Revenue</button><button class="tab" data-go="mgr-pay"><i>≡</i>Payroll</button></nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){document.querySelectorAll('.mesa-apps .phone').forEach(function(p){var tabs=p.querySelectorAll('.tab'),scrs=p.querySelectorAll('.scr');tabs.forEach(function(t){t.addEventListener('click',function(){var g=t.getAttribute('data-go');tabs.forEach(function(x){x.classList.toggle('on',x===t);});scrs.forEach(function(s){s.classList.toggle('on',s.getAttribute('data-scr')===g);});});});});})();
+</script>
 
 <!-- TABLE MAP DEMO -->
 <section class="demo-section">
